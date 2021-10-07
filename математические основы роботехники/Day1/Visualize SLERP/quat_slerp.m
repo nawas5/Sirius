@@ -12,8 +12,9 @@ function [ q_int ] = quat_slerp( q0, q1, steps )
 
     %% Your code goes here
     q_int = zeros(steps, 4);
-    tau = acos(quatmultiply(q0,q1));
+    omega = acos(quatmultiply(q0,q1));
+    t = linspace(0,1,steps);
     for i = 1:steps
-        q_int(i,:) = sin((1-i)*tau)/sin(tau)*q0 + sin(i*tau)/sin(tau)*q1;
+        q_int(i,:) = sin((1-t(i))*omega)/sin(omega)*q0 + sin(t(i)*omega)/sin(omega)*q1;
     end
 end

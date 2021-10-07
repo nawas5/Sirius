@@ -65,7 +65,7 @@ plot_line(o, y1, 'g--');
 plot_line(o, z1, 'b--');
 
 % Animate the vector
-q_anim = quat_slerp( q0, q1, 10 );
+q_anim = quat_slerp( q0, q1, 100 );
 
 hx = plot_line(o, x0, 'r--');
 hy = plot_line(o, y0, 'g--');
