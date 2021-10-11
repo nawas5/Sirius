@@ -1,4 +1,4 @@
-function [x,y] = lozi(xlast,ylast)
-x = 1 - 1.7*abs(xlast) + 0.5 * ylast;
+function [x,y] = lozi(a,b,xlast,ylast)
+x = 1 - a*abs(xlast) + b*ylast;
 y = xlast;
 end
