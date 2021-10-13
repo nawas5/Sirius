@@ -1,5 +1,4 @@
-function [y] = DH3(t1, d2, t3)
-
+function [y] =  RPR_FK(t1, d2, t3)
 
 y=zeros(3,4);
 

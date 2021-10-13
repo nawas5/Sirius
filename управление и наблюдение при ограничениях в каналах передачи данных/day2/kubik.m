@@ -7,46 +7,37 @@ b = 0.5;
 xlast = 1;
 ylast = 0;
 
-%hold on
-%for i = 1:1000
-%    x = 1-a*abs(xlast)+b*ylast;
- %   y = xlast;
-  %  plot(x,y,'k.')
-   % xlast = x;
-    %ylast = y;
-%end
+hr = linspace(-1.5, 1.5, 100);
+vr = linspace(-1.5, 1.5, 100);
 
-% space grid - horizontal, vertical
-hor = linspace(-1.5, 1.5, 100);
-vert = linspace(-1.5, 1.5, 100);
+init_rand_x = randi(49);
+init_rand_y = randi(49);
 
-% create a random number
-init_sq_x = randi(19);
-init_sq_y = randi(19);
+x1 = vr(init_sq_x);
+x2 = vr(init_sq_x+1);
 
-x1 = vert(init_sq_x);
-x2 = vert(init_sq_x+1);
+y1 = hr(init_rand_y);
+y2 = hr(init_rand_y+1);
 
-y1 = hor(init_sq_y);
-y2 = hor(init_sq_y+1);
+hr_sqr = linspace(x1, x2, 100);
+vr_sqr = linspace(y1, y2, 100);
 
-hor_sqr = linspace(x1, x2, 100);
-vert_sqr = linspace(y1, y2, 100);
+squares = [];
 
 ind = 1;
 for j = 1:100
     for k = 1:100
-        x_res = hor_sqr(j);
-        y_res = vert_sqr(k);
+        x_res = hr_sqr(j);
+        y_res = vr_sqr(k);
         x = 1-a*abs(x_res)+b*y_res;
         y = x_res;
         for l = 1:100
-            if x < hor(l)
+            if x < hr(l)
                 break
             end
         end
         for m = 1:100
-            if y < vert(m)
+            if y < vr(m)
                 break
             end
         end
